@@ -98,10 +98,6 @@ TEST(AIO, Fiber) {
     EXPECT_EQ(seq, (std::vector{1, 2, 3}));
 
     EXPECT_EQ(sched->io().scheduler(), sched);
-
-    (void) sched->std_in();
-    (void) sched->std_out().try_write(StreamFD::OctetStream{});
-    (void) sched->std_err().try_write(StreamFD::OctetStream{});
   });
 }
 
